@@ -1,0 +1,9 @@
+[Unit]
+Description=Test hello world executable file
+
+[Service]
+ExecStart=/usr/bin/smart-column-platform
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
