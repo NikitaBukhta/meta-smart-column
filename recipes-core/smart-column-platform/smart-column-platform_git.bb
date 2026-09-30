@@ -18,7 +18,7 @@ SRC_URI = "git://git@github.com/NikitaBukhta/smart-column-platform.git;protocol=
 
 # Modify these as desired
 PV = "1.0+git"
-SRCREV = "6b2c4be46d5f749915b45b25867561ba30d19662"
+SRCREV = "c802499a3af1bffcdc7080f0881eeb69900e808a"
 
 inherit cmake systemd
 
