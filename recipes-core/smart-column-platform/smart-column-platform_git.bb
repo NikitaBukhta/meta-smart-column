@@ -12,17 +12,19 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-SRC_URI = "git://git@github.com/NikitaBukhta/smart-column-platform.git;protocol=ssh;branch=master"
-SRC_URI += "file://smart-column-platform.service"
+SRC_URI = "git://git@github.com/NikitaBukhta/smart-column-platform.git;protocol=ssh;branch=master \
+           file://smart-column-platform.service \
+           "
 
 # Modify these as desired
 PV = "1.0+git"
-SRCREV = "54e051fcd6f117ae77f3945a455570adac53cd7f"
+SRCREV = "6b2c4be46d5f749915b45b25867561ba30d19662"
 
 inherit cmake systemd
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
+DEPENDS += " whisper-lib"
 
 # Systemd service file for smart-column-platform
 SYSTEMD_SERVICE:${PN} = "smart-column-platform.service"
