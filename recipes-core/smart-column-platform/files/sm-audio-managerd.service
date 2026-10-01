@@ -1,0 +1,9 @@
+[Unit]
+Description=An audio manager daemon for controlling the audio stream (multimedia control, switching, pause, stop)
+
+[Service]
+ExecStart=/usr/bin/sm-audio-managerd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

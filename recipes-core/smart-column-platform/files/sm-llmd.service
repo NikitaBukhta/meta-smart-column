@@ -1,0 +1,9 @@
+[Unit]
+Description=LLM daemon for processing complex user requests
+
+[Service]
+ExecStart=/usr/bin/sm-llmd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

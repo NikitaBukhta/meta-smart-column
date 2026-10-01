@@ -12,13 +12,20 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
+SM_DAEMONS = "sm-audio-managerd sm-dispatcherd sm-keyword-catcherd sm-llmd sm-searchd sm-sttd sm-ttsd"
 SRC_URI = "git://git@github.com/NikitaBukhta/smart-column-platform.git;protocol=ssh;branch=master \
-           file://smart-column-platform.service \
+           file://sm-audio-managerd.service \
+           file://sm-dispatcherd.service \
+           file://sm-keyword-catcherd.service \
+           file://sm-llmd.service \
+           file://sm-searchd.service \
+           file://sm-sttd.service \
+           file://sm-ttsd.service \
            "
 
 # Modify these as desired
 PV = "1.0+git"
-SRCREV = "c802499a3af1bffcdc7080f0881eeb69900e808a"
+SRCREV = "1d1e5f4411aeb8f18ab30680cc1e360a2611f132"
 
 inherit cmake systemd
 
@@ -27,9 +34,10 @@ EXTRA_OECMAKE = ""
 DEPENDS += " whisper-lib"
 
 # Systemd service file for smart-column-platform
-SYSTEMD_SERVICE:${PN} = "smart-column-platform.service"
-
+SYSTEMD_SERVICE:${PN} = "${@' '.join(d + '.service' for d in d.getVar('SM_DAEMONS').split())}"
 do_install:append() {
-    install -Dm 0644 ${UNPACKDIR}/smart-column-platform.service \
-        ${D}${systemd_system_unitdir}/smart-column-platform.service
+    for daemon in ${SM_DAEMONS}; do
+        install -Dm 0644 ${UNPACKDIR}/${daemon}.service \
+            ${D}${systemd_system_unitdir}/${daemon}.service
+    done
 }

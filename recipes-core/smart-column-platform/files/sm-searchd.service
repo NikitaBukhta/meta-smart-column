@@ -1,0 +1,9 @@
+[Unit]
+Description=A daemon for searching the user required via web
+
+[Service]
+ExecStart=/usr/bin/sm-searchd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

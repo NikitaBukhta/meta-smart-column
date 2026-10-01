@@ -1,0 +1,9 @@
+[Unit]
+Description=A task distribution daemon for services to efficiently manage resources and distribute responsibilities.
+
+[Service]
+ExecStart=/usr/bin/sm-dispatcherd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
