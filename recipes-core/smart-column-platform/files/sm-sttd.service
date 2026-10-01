@@ -1,0 +1,9 @@
+[Unit]
+Description=A daemon that converts text into voice response.
+
+[Service]
+ExecStart=/usr/bin/sm-sttd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -2,7 +2,7 @@
 Description=Test hello world executable file
 
 [Service]
-ExecStart=/usr/bin/smart-column-platform
+ExecStart=/usr/bin/sm-ttsd
 Restart=on-failure
 
 [Install]

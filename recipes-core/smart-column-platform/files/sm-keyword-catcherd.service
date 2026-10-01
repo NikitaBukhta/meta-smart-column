@@ -1,0 +1,9 @@
+[Unit]
+Description=A daemon that catches the user's keyword and starts the user request processing loop.
+
+[Service]
+ExecStart=/usr/bin/sm-keyword-catcherd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
