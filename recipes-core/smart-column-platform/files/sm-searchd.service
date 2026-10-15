@@ -1,5 +1,6 @@
 [Unit]
 Description=A daemon for searching the user required via web
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-searchd
