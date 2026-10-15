@@ -1,5 +1,6 @@
 [Unit]
-Description=A daemon that converts text into voice response.
+Description=A daemon that converts voice into text response
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-sttd

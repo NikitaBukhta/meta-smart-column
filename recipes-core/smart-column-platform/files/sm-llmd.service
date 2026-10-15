@@ -1,5 +1,6 @@
 [Unit]
 Description=LLM daemon for processing complex user requests
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-llmd

@@ -1,5 +1,6 @@
 [Unit]
-Description=Test hello world executable file
+Description=A daemon that converts text into voice response
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-ttsd

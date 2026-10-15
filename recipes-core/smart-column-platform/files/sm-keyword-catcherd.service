@@ -1,5 +1,6 @@
 [Unit]
 Description=A daemon that catches the user's keyword and starts the user request processing loop.
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-keyword-catcherd

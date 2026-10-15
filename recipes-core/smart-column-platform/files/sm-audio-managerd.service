@@ -1,5 +1,6 @@
 [Unit]
 Description=An audio manager daemon for controlling the audio stream (multimedia control, switching, pause, stop)
+After=sm-dispatcherd.service
 
 [Service]
 ExecStart=/usr/bin/sm-audio-managerd
