@@ -25,13 +25,17 @@ SRC_URI = "git://git@github.com/NikitaBukhta/smart-column-platform.git;protocol=
 
 # Modify these as desired
 PV = "1.0+git"
-SRCREV = "c5d446758a1c02b0277d82d1fbaeb7f724d736e8"
+SRCREV = "bf0b97a907cde0bb2579860773e325098196db6f"
 
 inherit cmake systemd
 
+# Build from local checkout for testing. Don't commit it
+#inherit externalsrc
+#EXTERNALSRC = "${PROJECT_ABSOLUTE_PATH}/smart-column-platform"
+
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
-DEPENDS += " whisper-lib"
+DEPENDS += " whisper-lib spdlog"
 
 # Systemd service file for smart-column-platform
 SYSTEMD_SERVICE:${PN} = "${@' '.join(d + '.service' for d in d.getVar('SM_DAEMONS').split())}"
