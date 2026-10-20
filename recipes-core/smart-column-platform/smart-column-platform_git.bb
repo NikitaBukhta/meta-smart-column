@@ -31,7 +31,7 @@ inherit cmake systemd
 
 # Build from local checkout for testing. Don't commit it
 #inherit externalsrc
-#EXTERNALSRC = "${PROJECT_ABSOLUTE_PATH}/smart-column-platform"
+#EXTERNALSRC = "~/projects/smart-column-platform"
 
 # Specify any options you want to pass to cmake using EXTRA_OECMAKE:
 EXTRA_OECMAKE = ""
